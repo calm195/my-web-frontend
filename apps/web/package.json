@@ -1,0 +1,22 @@
+{
+  "name": "@personal/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "typecheck": "nuxt typecheck",
+    "prepare": "nuxt prepare"
+  },
+  "dependencies": {
+    "@personal/api-client": "workspace:*",
+    "@personal/ui": "workspace:*",
+    "nuxt": "4.6.4",
+    "vue": "3.5.45"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vue-tsc": "3.3.14"
+  }
+}
