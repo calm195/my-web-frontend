@@ -1,0 +1,324 @@
+.admin-shell {
+  width: min(1060px, calc(100% - 56px));
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.admin-header {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  font: 600 22px var(--font-serif);
+}
+.admin-brand > .brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 40px;
+  border: 1px solid var(--color-green);
+  border-radius: 50% 50% 5px 5px;
+  font-size: 20px;
+}
+.admin-brand small {
+  margin-left: 9px;
+  padding-left: 20px;
+  border-left: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font: 13px var(--font-sans);
+}
+.return-site {
+  font-size: 13px;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+.session-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 13px;
+}
+.session-actions .button {
+  font-size: 12px;
+  min-height: 38px;
+  padding: 0.45rem 0.8rem;
+}
+.admin-navigation {
+  display: flex;
+  gap: 28px;
+  padding: 22px 0 0;
+}
+.admin-navigation a {
+  font-size: 14px;
+  color: var(--color-muted);
+  text-decoration: none;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+}
+.admin-navigation a.router-link-exact-active {
+  color: var(--color-green);
+  border-color: var(--color-accent);
+}
+#admin-main {
+  flex: 1;
+}
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 65px;
+  align-items: center;
+  padding: 70px 0 85px;
+}
+.login-intro h1 {
+  margin: 0 0 24px;
+  font-size: 48px;
+}
+.login-intro > p:not(.eyebrow) {
+  color: var(--color-muted);
+  font-size: 17px;
+  line-height: 2;
+}
+.intro-decoration {
+  width: 155px;
+  height: 110px;
+  border-top: 1px solid #b7bfad;
+  border-left: 1px solid #b7bfad;
+  border-right: 1px solid #b7bfad;
+  border-radius: 90px 90px 0 0;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.intro-decoration::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 90px;
+  border-radius: 50%;
+  left: -20px;
+  top: 65px;
+  background: #aeb7a0;
+}
+.intro-decoration span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #c48460;
+  margin: 26px auto;
+}
+.login-panel {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-panel);
+  background: var(--color-panel);
+  padding: 36px;
+}
+.login-panel h2 {
+  margin: 0;
+  font-size: 27px;
+}
+.panel-intro {
+  margin: 9px 0 27px;
+  font-size: 14px;
+}
+.form-field {
+  margin-bottom: 20px;
+}
+.form-field label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.form-field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 13px;
+  border: 1px solid #bfc8bb;
+  border-radius: 6px;
+  color: var(--color-ink);
+  background: #fffefa;
+  font-size: 16px;
+}
+.form-field input[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+.password-field {
+  position: relative;
+}
+.password-field input {
+  padding-right: 66px;
+}
+.password-toggle {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  border-radius: 3px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.field-error {
+  color: var(--color-danger);
+  margin: 7px 0 0;
+  font-size: 13px;
+}
+.login-submit {
+  width: 100%;
+  margin-top: 5px;
+}
+.login-note {
+  margin: 23px 0 0;
+  color: var(--color-muted);
+  text-align: center;
+  font-size: 12px;
+}
+.management-page {
+  padding: 46px 0 70px;
+}
+.management-page h1 {
+  margin: 0;
+  font-size: 35px;
+}
+.page-description {
+  margin: 10px 0 30px;
+  color: var(--color-muted);
+}
+.management-panel {
+  padding: 30px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-panel);
+}
+.management-panel h2 {
+  font-size: 25px;
+  margin: 18px 0 10px;
+}
+.management-panel p {
+  max-width: 670px;
+}
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--color-soft);
+  color: var(--color-green);
+  border-radius: 20px;
+  font-size: 12px;
+}
+.panel-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+.session-details {
+  margin: 0;
+}
+.session-details > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: baseline;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+.session-details dt {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+.session-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.check-message {
+  display: inline-block;
+  margin: 0 0 0 15px;
+  color: var(--color-green);
+  font-size: 13px;
+}
+.narrow-page {
+  max-width: 670px;
+}
+.admin-footer {
+  border-top: 1px solid var(--color-line);
+  padding: 25px 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+@media (max-width: 850px) {
+  .login-layout {
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+  }
+  .login-intro h1 {
+    font-size: 39px;
+  }
+}
+@media (max-width: 690px) {
+  .admin-shell {
+    width: calc(100% - 36px);
+  }
+  .admin-header {
+    min-height: 85px;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 18px 0;
+  }
+  .admin-brand {
+    font-size: 19px;
+    gap: 8px;
+  }
+  .admin-brand small {
+    display: none;
+  }
+  .session-actions {
+    gap: 9px;
+    font-size: 12px;
+  }
+  .login-layout {
+    grid-template-columns: 1fr;
+    padding: 35px 0 50px;
+    gap: 26px;
+  }
+  .login-intro h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+  .login-intro > p:not(.eyebrow) {
+    font-size: 14px;
+  }
+  .intro-decoration {
+    display: none;
+  }
+  .login-panel {
+    padding: 26px 23px;
+  }
+  .management-page {
+    padding: 35px 0 50px;
+  }
+  .management-page h1 {
+    font-size: 29px;
+  }
+  .management-panel {
+    padding: 23px 20px;
+  }
+  .session-details > div {
+    grid-template-columns: 95px 1fr;
+    gap: 10px;
+  }
+  .check-message {
+    display: block;
+    margin: 12px 0 0;
+  }
+}
