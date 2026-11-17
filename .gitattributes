@@ -1,0 +1,11 @@
+# 文本统一使用 LF，二进制文件不执行换行转换。
+* text=auto eol=lf
+
+# Markdown 行尾的两个空格可表示显式换行，与 .editorconfig 保持一致。
+*.md whitespace=-blank-at-eol
+
+# 原型验收图片按二进制存储和比较。
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
