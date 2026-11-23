@@ -17,7 +17,7 @@ pnpm build
 
 `pnpm build:web` 和 `pnpm build:admin` 分别生成公开站 `.output/` 与管理端 `dist/`，不需要读取后端源码或运行 Go。生成类型已经提交，因此单独检出可以安装、类型检查、单测和构建；需要真实 API 的页面验证由根工作区完成。
 
-位于完整工作区时，可使用根仓库已固定的工具链，例如从根目录执行 `sh scripts/dev/with-tools.sh pnpm --dir frontend check`。首次安装和联调见 [P1 本地开发说明](../docs/development/p1-local.md)。
+位于完整工作区时，可使用根仓库已固定的工具链，例如从根目录执行 `./dev exec pnpm --dir frontend check`。首次安装和联调见 [P1 本地开发说明](../docs/development/p1-local.md)。
 
 ## 合同生成
 
