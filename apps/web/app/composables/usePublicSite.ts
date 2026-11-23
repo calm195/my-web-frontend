@@ -10,6 +10,7 @@ export function usePublicSite() {
     credentials: 'omit',
   })
 
+  // useAsyncData 的结果会进入公开页面 payload；这里只读取公开 DTO，不能加入身份或草稿。
   return useAsyncData('public-site', () => api.getPublicSite(), {
     deep: false,
   })

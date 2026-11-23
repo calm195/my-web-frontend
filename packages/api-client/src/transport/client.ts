@@ -93,7 +93,7 @@ function delayWithAbort(ms: number, signal?: AbortSignal, resultUncertain = fals
   })
 }
 
-/** createApiClient 为每个 SSR 请求创建实例；公开 SSR 传 credentials:'omit'，不共享站主状态。 */
+/** createApiClient 创建请求客户端；公开 SSR 每次请求单独创建并禁用 Cookie。 */
 export function createApiClient(config: ClientOptions = {}): ApiClient {
   const fetcher = config.fetch ?? globalThis.fetch.bind(globalThis)
   const baseUrl = (config.baseUrl ?? '').replace(/\/$/, '')
@@ -175,6 +175,7 @@ export function createApiClient(config: ClientOptions = {}): ApiClient {
     }
     if (body !== undefined && !isFormData) headers.set('Content-Type', 'application/json')
 
+    // 无幂等保障的登录、退出和只读 POST 不能在结果不明时自动重试。
     const attempts = isRead ? 3 : persistentWrite ? 2 : 1
     for (let attempt = 0; attempt < attempts; attempt++) {
       if (options.signal?.aborted)
