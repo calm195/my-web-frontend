@@ -1,6 +1,6 @@
 # 共享 API 客户端
 
-类型唯一来源为根目录 `contracts/openapi.yaml`。`src/generated/schema.ts` 由 `pnpm --filter @personal/api-client generate` 生成，`generate:check` 检查生成漂移；不手工维护另一份 DTO。
+类型唯一来源为根协调仓库的 [contracts/openapi.yaml](../../../contracts/openapi.yaml)，前端不维护副本。默认从生成脚本位置推导该目录，也可用绝对路径 `SITE_CONTRACTS_DIR` 指定同一合同目录；合同不存在时生成和漂移检查明确失败。独立构建及单测使用已提交生成类型。`src/generated/schema.ts` 由 `pnpm --filter @personal/api-client generate` 生成，`generate:check` 检查生成漂移；不手工维护另一份 DTO。
 
 生成脚本使用官方 Node API 的 `openapiTS` 与 `astToString`，直接读取本地合同，不请求远程 schema。[官方 Node API 说明](https://openapi-ts.dev/node)
 

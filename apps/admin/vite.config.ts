@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   base: '/admin/',
+  // 联调缓存随运行目录隔离，避免并行环境复用不同端口的编译配置。
+  cacheDir: process.env.SITE_VITE_CACHE_DIR || 'node_modules/.vite',
   plugins: [vue()],
   server: {
     host: '127.0.0.1',

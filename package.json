@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "personal-website-frontend",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.21.0",
@@ -8,28 +8,19 @@
     "pnpm": "12.21.0"
   },
   "scripts": {
-    "dev:doctor": "node scripts/dev/services.mjs doctor",
-    "dev:prepare": "node scripts/dev/services.mjs prepare",
-    "dev:up": "node scripts/dev/services.mjs up",
-    "dev:status": "node scripts/dev/services.mjs status",
-    "dev:down": "node scripts/dev/services.mjs down",
     "generate": "pnpm --filter @personal/api-client generate",
-    "lint": "eslint apps packages scripts/dev scripts/test tests",
-    "format:check": "prettier --check apps packages scripts/dev/*.mjs scripts/test tests package.json pnpm-workspace.yaml eslint.config.mjs",
+    "generate:check": "pnpm --filter @personal/api-client generate:check",
+    "lint": "eslint apps packages",
+    "format:check": "prettier --check apps packages package.json pnpm-workspace.yaml eslint.config.mjs",
     "typecheck": "pnpm -r --if-present typecheck",
-    "check": "node scripts/dev/quality.mjs check",
-    "test": "pnpm --filter @personal/api-client test && pnpm --filter @personal/admin test && node scripts/dev/quality.mjs go-test && pnpm test:lifecycle",
-    "test:lifecycle": "pnpm build:api && node --test scripts/dev/*.test.mjs",
-    "test:integration": "node scripts/test/integration.mjs",
-    "test:e2e": "node scripts/test/e2e.mjs",
-    "build": "node scripts/dev/quality.mjs build",
+    "check": "pnpm generate:check && pnpm lint && pnpm format:check && pnpm typecheck",
+    "test": "pnpm --filter @personal/api-client test && pnpm --filter @personal/admin test",
+    "build": "pnpm build:web && pnpm build:admin",
     "build:web": "pnpm --filter @personal/web build",
-    "build:admin": "pnpm --filter @personal/admin build",
-    "build:api": "node scripts/dev/quality.mjs build-api"
+    "build:admin": "pnpm --filter @personal/admin build"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@playwright/test": "1.65.1",
     "@types/node": "24.19.2",
     "eslint": "10.15.0",
     "eslint-plugin-vue": "10.12.1",

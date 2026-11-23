@@ -1,0 +1,19 @@
+# 本仓库只提交源码、锁文件和生成类型；运行数据与凭据由根工作区管理。
+.env
+.env.*
+!.env.example
+node_modules/
+.nuxt/
+.output/
+dist/
+/var/
+coverage/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+*.pem
+*.key
+.DS_Store

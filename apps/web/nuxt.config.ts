@@ -3,6 +3,8 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2026-11-17',
   devtools: { enabled: false },
+  // 每轮真实联调独占编译目录与 Nuxt 锁，避免开发进程互相接管。
+  buildDir: process.env.SITE_NUXT_BUILD_DIR || '.nuxt',
   css: ['@personal/ui/tokens.css', '~/assets/site.css'],
   typescript: { strict: true },
   runtimeConfig: {
