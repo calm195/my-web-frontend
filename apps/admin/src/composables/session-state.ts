@@ -49,6 +49,7 @@ export function createSessionState(makeApi: (getCsrf: () => string | undefined) 
         if (error instanceof ApiError && error.status === 401) {
           forgetSession()
         } else {
+          // 网络或服务故障无法证明会话已失效，保留内存值但暂停已认证操作。
           lastError.value = error
           status.value = 'unavailable'
         }
